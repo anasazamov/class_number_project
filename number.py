@@ -161,3 +161,5 @@ class Number:
 
 # Create a new instance of Number
 number = Number(3)
+
+
