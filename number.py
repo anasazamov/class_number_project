@@ -132,7 +132,9 @@ class Number:
         """
         x = ([int(i) for i in str(self.value)])
         if len(x)%2==0:
-            return [x[len(x)//2-1],x[len(x)//2]]
+            return (x[len(x)//2-1]+x[len(x)//2])/2
+        elif len(x)%2!=0:
+            return x[len(x)//2]
 
     def get_range(self):
         """
@@ -158,5 +160,5 @@ class Number:
 
 # Create a new instance of Number
 number = Number(2436)
-print(number.get_range())
+print(number.get_median())
 
