@@ -160,8 +160,6 @@ class Number:
     
 
 # Create a new instance of Number
-number = Number(3)
-
-
-
+number = Number(35165165132161636546465216494613514946166486168486165184)
+print(number.get_length())
 
