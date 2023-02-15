@@ -43,7 +43,7 @@ class Number:
 
         returns: list
         """
-        return [i for i in range(1,self.value) if self.value%i==0]
+        return list( set([int(i) for i in str(self.value) if int(i)%2==0]))
 
     def get_length(self):
         """
@@ -51,7 +51,7 @@ class Number:
 
         returns: int
         """
-        return [int(i) for i in str(self.value)]
+        return len([int(i) for i in str(self.value)])
 
     def get_sum(self):
         """
@@ -130,7 +130,7 @@ class Number:
 
         returns: float
         """
-        x = ([int(i) for i in str(self.value)]).sort()
+        x = sorted([int(i) for i in str(self.value)])
         if len(x)%2!=0:
             return x[len(x)//2+1]
         elif len(x)%2==0:
@@ -143,7 +143,7 @@ class Number:
 
         returns: list
         """
-        return ([int(i) for i in str(self.value)])
+        return list(set([int(i) for i in str(self.value)]))
         
 
     def get_frequency(self):
@@ -152,14 +152,14 @@ class Number:
 
         returns: dict
         """
-        x=[i for i in str(self.value)]
+        x=[int(i) for i in str(self.value)]
         d=dict()
         for i in x:
-            d[i]=str(self.value).count(i)
+            d[i]=str(self.value).count(f"{i}")
         return d
     
 
 # Create a new instance of Number
-number = Number(10)
-print(number.get_average())
+number = Number(1234612)
+print(number.get_range())
 
