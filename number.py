@@ -43,7 +43,7 @@ class Number:
 
         returns: list
         """
-        return list( set([int(i) for i in str(self.value) if int(i)%2==0]))
+        return [i for i in range(1,self.value) if self.value%i==0]
 
     def get_length(self):
         """
@@ -130,12 +130,9 @@ class Number:
 
         returns: float
         """
-        x = sorted([int(i) for i in str(self.value)])
-        if len(x)%2!=0:
-            return x[len(x)//2+1]
-        elif len(x)%2==0:
-            return (x[len(x)/2]+x[len(x)/2+1]/2)
-
+        x = ([int(i) for i in str(self.value)])
+        if len(x)%2==0:
+            return [x[len(x)//2-1],x[len(x)//2]]
 
     def get_range(self):
         """
@@ -143,7 +140,7 @@ class Number:
 
         returns: list
         """
-        return list(set([int(i) for i in str(self.value)]))
+        return [min([int(i) for i in str(self.value)]),max([int(i) for i in str(self.value)])]
         
 
     def get_frequency(self):
@@ -160,6 +157,6 @@ class Number:
     
 
 # Create a new instance of Number
-number = Number(1234612)
+number = Number(2436)
 print(number.get_range())
 
