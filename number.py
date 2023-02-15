@@ -122,7 +122,7 @@ class Number:
 
         returns: float
         """
-        return sum([int(i) for i in str(self.value)])/2
+        return sum([int(i) for i in str(self.value)])/len(str(self.value))
 
     def get_median(self):
         """
@@ -160,6 +160,6 @@ class Number:
     
 
 # Create a new instance of Number
-number = Number(35165165132161636546465216494613514946166486168486165184)
-print(number.get_length())
+number = Number(10)
+print(number.get_average())
 
