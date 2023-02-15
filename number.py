@@ -1,3 +1,4 @@
+import statistics
 class Number:
     def __init__(self, value: int):
         self.value = value
@@ -130,12 +131,8 @@ class Number:
 
         returns: float
         """
-        x = ([int(i) for i in str(self.value)])
-        if len(x)%2==0:
-            return (x[len(x)//2-1]+x[len(x)//2])/2
-        elif len(x)%2!=0:
-            return x[len(x)//2]
-
+        return statistics.median([int(i) for i in str(self.value)])
+        
     def get_range(self):
         """
         Returns the range of all the digits in the number.
