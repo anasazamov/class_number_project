@@ -43,7 +43,7 @@ class Number:
 
         returns: list
         """
-        return [i for i in range(1,self.value) if self.value%i==0]
+        return [i for i in range(1,self.value+1) if self.value%i==0]
 
     def get_length(self):
         """
